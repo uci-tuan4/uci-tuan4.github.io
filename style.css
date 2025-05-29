@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50; /* Dark Blue/Grey */
+    --secondary-color: #3498db; /* Bright Blue */
+    --accent-color: #e74c3c; /* Red/Orange Accent */
+    --light-grey: #ecf0f1;
+    --dark-grey: #7f8c8d;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f9f9f9;
+    --shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, a, section, header, footer, nav, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--dark-grey); /* Softer text color for paragraphs */
+}
+
+a {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--light-grey);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--light-grey);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent; /* For hover effect */
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* Assuming you might add an active class via JS */
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+section:nth-child(even) {
+    background-color: var(--light-grey); /* Alternating section backgrounds */
+}
+
+#hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--light-grey);
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners if header is sticky */
+}
+
+#hero h1 {
+    color: var(--light-grey);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#hero p {
+    color: var(--light-grey);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#hero p a {
+    color: var(--light-grey);
+    font-weight: bold;
+    text-decoration: underline;
+}
+#hero p a:hover {
+    color: #f1c40f; /* Gold hover for hero links */
+}
+
+#typing-subtitle::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: 3px;
+    font-weight: bold; /* Make cursor a bit thicker */
+    position: relative;
+    top: -2px; /* Adjust cursor position slightly */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Card-like styling for projects, experience, education */
+.project, .job, .activity, #education div {
+    background-color: var(--card-bg);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid transparent; /* For hover accent */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease; 
+}
+
+.project:hover, .job:hover, .activity:hover, #education div:hover {
+    transform: translateY(-8px) scale(1.01); /* Slightly less scale for subtlety */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18); /* Slightly stronger shadow */
+    border-left: 4px solid var(--accent-color);
+}
+
+.project h3, .job h3, .activity h3, #education div h3 {
+    margin-top: 0;
+}
+
+.project p em, .job p strong, .activity p em, #education div p i {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-style: normal; /* Reset italics if not desired globally */
+    font-weight: bold;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2em; /* Space for custom bullet */
+    position: relative;
+}
+
+ul li::before { /* Custom bullets for lists */
+    content: '\2022'; /* Bullet character */
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.2em; /* Align with text */
+    position: absolute;
+    left: 0;
+}
+
+#skills ul {
+    padding-left: 0; /* Remove default padding as we use custom bullets */
+}
+
+#skills ul li::before {
+    content: '\2713'; /* Checkmark for skills */
+    color: var(--secondary-color);
+}
+
+
+#contact p {
+    font-size: 1.1rem;
+}
+
+#contact a {
+    font-weight: bold;
+}
+
+#resume a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-grey);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#resume a:hover {
+    background-color: var(--accent-color);
+    color: var(--light-grey); /* Ensure text color stays light */
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--light-grey);
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        margin: 8px 0;
+    }
+    main {
+        margin: 1rem auto;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    #hero {
+        padding: 60px 15px;
+    }
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        line-height: 1.7;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+     #hero h1 {
+        font-size: 2.2rem;
+    }
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Add a subtle animation to sections on scroll (requires JS to add 'visible' class) */
+/* For now, this is just a placeholder. Actual animation triggering needs JavaScript. */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cursor Trail */
+.cursor-trail-dot {
+    position: absolute; /* Use absolute positioning relative to the body */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none; /* IMPORTANT: So the trail doesn't interfere with clicks */
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+} 
