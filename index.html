@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Nguyen - Portfolio</title>
+    <title>Tu Nguyen - Software Engineering Student</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Tu Nguyen - Software Engineering student at UC Irvine">
 </head>
 <body>
     <header>
         <nav>
             <ul>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#resume">Resume</a></li>
             </ul>
         </nav>
     </header>
@@ -25,53 +28,122 @@
                 <img src="me.jpeg" alt="Tu Nguyen" class="profile-picture">
             </div>
             <p><span id="typing-subtitle"></span></p>
-            <p>657-334-5385 | <a href="mailto:tuan4@uci.edu">tuan4@uci.edu</a> | <a href="https://www.linkedin.com/in/tunguyen999" target="_blank">LinkedIn</a> | <a href="https://github.com/uci-tuan4" target="_blank">GitHub</a></p>
-            <!-- Eye-catching element will go here -->
+            <div class="hero-links">
+                <a href="mailto:tuan4@uci.edu">tuan4@uci.edu</a>
+                <a href="https://www.linkedin.com/in/tunguyen999" target="_blank">LinkedIn</a>
+                <a href="https://github.com/uci-tuan4" target="_blank">GitHub</a>
+                <a href="tel:6573345385">657-334-5385</a>
+            </div>
         </section>
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Motivated software engineering student who has strong communication and problem-solving skills. Quick learner who is also willing to adapt to new and challenging situations.</p>
+            <p>Motivated software engineering student at UC Irvine with strong communication and problem-solving skills. Quick learner who is willing to adapt to new and challenging situations. Passionate about building impactful projects and continuous learning.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>SQL</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Tools</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Flask</li>
+                        <li>Node.js</li>
+                        <li>Git</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>APIs & Cloud</h3>
+                    <ul>
+                        <li>REST APIs</li>
+                        <li>OpenAI API</li>
+                        <li>Google OAuth</li>
+                        <li>Reddit API</li>
+                        <li>Render (Deployment)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             <div class="project">
                 <h3>VERITABLE ARMY</h3>
-                <p><em>Python, Flask, OpenAI API, Google OAuth</em></p>
-                <p>Developed a Python-based application to automate the process of fetching trending image posts from specified Reddit subreddits and publishing them to Instagram. The application features a web interface for configuration and content management, along with a command-line interface for direct operation.
-                    <a href="https://veritable-army.onrender.com" target="_blank">View Project</a>
-                </p>
+                <p class="tech">Python, Flask, OpenAI API, Google OAuth, Instagram API</p>
+                <p>Automated content pipeline that fetches trending images from Reddit subreddits and publishes them to Instagram. Features a web interface for configuration and content management.</p>
+                <a href="https://veritable-army.onrender.com" target="_blank">View Project →</a>
             </div>
             <div class="project">
-                <h3>Reddit-To-Instagram-Content-Pipeline (RTICP)</h3>
-                <p><em>Python, Flask, RedditAPI</em></p>
-                <p>Engineered a Python-based AI ensemble system that leverages multiple large language models (OpenAI GPT-4o/GPT-4o-mini, Google Gemini-1.5-flash, Anthropic Claude-3-Haiku) to generate more robust and reliable answers to user prompts.
-                <a href="https://reddit-to-instagram-content-pipeline.onrender.com" target="_blank">View Project</a></p>
+                <h3>Reddit-To-Instagram Content Pipeline</h3>
+                <p class="tech">Python, Flask, Reddit API, Multiple LLMs</p>
+                <p>AI ensemble system leveraging OpenAI GPT-4o, Google Gemini-1.5-flash, and Claude-3-Haiku to generate robust responses to user prompts.</p>
+                <a href="https://reddit-to-instagram-content-pipeline.onrender.com" target="_blank">View Project →</a>
             </div>
-            <!-- Add more projects as needed -->
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p class="tech">HTML, CSS, JavaScript</p>
+                <p>Personal portfolio website showcasing projects, skills, and contact information. Deployed on GitHub Pages.</p>
+                <a href="https://uci-tuan4.github.io" target="_blank">View Project →</a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Software Engineering Intern</h3>
+                <p class="company">Company Name</p>
+                <p class="duration">Date - Date</p>
+                <ul>
+                    <li>Contributed to development of web applications</li>
+                    <li>Collaborated with team on code reviews and debugging</li>
+                    <li>Learned industry best practices</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="school">
+                <h3>University of California, Irvine</h3>
+                <p>B.S. in Computer Science</p>
+                <p class="duration">Expected Graduation: 2026</p>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:tuan4@uci.edu">tuan4@uci.edu</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/tunguyen999" target="_blank">www.linkedin.com/in/tunguyen999</a></p>
-            <p>GitHub: <a href="https://github.com/uci-tuan4" target="_blank">https://github.com/uci-tuan4</a></p>
-            <p>Phone: 657-334-5385</p>
-            <!-- Add contact form or direct links -->
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            <div class="contact-links">
+                <a href="mailto:tuan4@uci.edu">📧 Email</a>
+                <a href="https://www.linkedin.com/in/tunguyen999" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/uci-tuan4" target="_blank">💻 GitHub</a>
+            </div>
         </section>
 
         <section id="resume">
             <h2>Resume</h2>
-            <p><a href="tu_s_resume_feb2026.pdf" download>Download Resume (PDF)</a></p>
+            <p>Download my resume to learn more about my background and experience.</p>
+            <a href="tu_s_resume_feb2026.pdf" download>Download Resume (PDF)</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Tu Nguyen. All rights reserved.</p>
+        <p>&copy; 2026 Tu Nguyen. All rights reserved.</p>
+        <p>Built with passion and lots of ☕</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html> 
-
+</html>
