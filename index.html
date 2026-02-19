@@ -16,6 +16,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#activities">Activities</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -38,7 +39,53 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>Motivated software engineering student at UC Irvine with strong communication and problem-solving skills. Quick learner who is willing to adapt to new and challenging situations. Passionate about building impactful projects and continuous learning.</p>
+            <p>Computer Science student at UC Irvine (GPA: 3.9) with hands-on experience in full-stack development and AI/LLM technologies. Passionate about building impactful projects and continuously learning new technologies. Seeking to leverage my skills in software engineering and AI operations.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="school">
+                <h3>University of California, Irvine</h3>
+                <p class="degree">B.S. in Computer Science</p>
+                <p class="gpa">GPA: 3.9</p>
+                <p class="duration">Sep. 2023 -- June 2027</p>
+                <p class="courses"><strong>Relevant Coursework:</strong> Advanced Computer Networks, Software Testing & Quality Assurance, Digital Logic Design</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="job">
+                <h3>Incoming Software Engineer Intern</h3>
+                <p class="company">Roblox | San Mateo, CA</p>
+                <p class="duration">June 2026 -- September 2026</p>
+                <ul>
+                    <li>AI Operations Engineer for summer 2026 intern class</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Software Engineer Intern</h3>
+                <p class="company">VN Consulting | Cypress, CA</p>
+                <p class="duration">June 2025 -- September 2025</p>
+                <ul>
+                    <li>Engineered responsive user interfaces for a client-facing healthcare application using React, Ruby, and JavaScript, contributing to a 5-person Agile team.</li>
+                    <li>Integrated front-end components with RESTful APIs using Ruby and SQL to securely fetch, display, and update sensitive patient data.</li>
+                    <li>Contributed to a patient portal application used by over 1,000 users, building features that improved patient access to their health information.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>AI/LLM Trainer - Coding Specialist</h3>
+                <p class="company">DataAnnotation | Remote</p>
+                <p class="duration">June 2024 -- June 2025</p>
+                <ul>
+                    <li>Improved LLM code generation by evaluating and ranking thousands of AI responses in Python, JavaScript, and C++ for correctness and efficiency.</li>
+                    <li>Conducted adversarial testing ("red-teaming") on AI models to identify vulnerabilities and unsafe code generation patterns.</li>
+                    <li>Authored code solutions and technical explanations on topics like REST APIs and algorithms for RLHF training data.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="skills">
@@ -48,30 +95,43 @@
                     <h3>Languages</h3>
                     <ul>
                         <li>Python</li>
+                        <li>C/C++</li>
+                        <li>SQL</li>
                         <li>JavaScript</li>
                         <li>HTML/CSS</li>
-                        <li>SQL</li>
-                        <li>Java</li>
+                        <li>R</li>
+                        <li>Ruby</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
+                    <h3>Frameworks</h3>
                     <ul>
                         <li>React</li>
-                        <li>Flask</li>
                         <li>Node.js</li>
-                        <li>Git</li>
-                        <li>Docker</li>
+                        <li>Flask</li>
+                        <li>FastAPI</li>
+                        <li>JUnit</li>
+                        <li>Material-UI</li>
+                        <li>WordPress</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>APIs & Cloud</h3>
+                    <h3>Developer Tools</h3>
                     <ul>
-                        <li>REST APIs</li>
-                        <li>OpenAI API</li>
-                        <li>Google OAuth</li>
-                        <li>Reddit API</li>
-                        <li>Render (Deployment)</li>
+                        <li>Git</li>
+                        <li>Google Cloud Platform</li>
+                        <li>VS Code</li>
+                        <li>PyCharm</li>
+                        <li>IntelliJ</li>
+                        <li>CLion</li>
+                        <li>Jira / Asana</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Google IT Support</li>
+                        <li>freeCodeCamp JavaScript Algorithms and Data Structures</li>
                     </ul>
                 </div>
             </div>
@@ -81,44 +141,41 @@
             <h2>Projects</h2>
             <div class="project">
                 <h3>VERITABLE ARMY</h3>
-                <p class="tech">Python, Flask, OpenAI API, Google OAuth, Instagram API</p>
-                <p>Automated content pipeline that fetches trending images from Reddit subreddits and publishes them to Instagram. Features a web interface for configuration and content management.</p>
+                <p class="tech">Python, Flask, OpenAI API, Google OAuth, Anthropic Claude</p>
+                <ul>
+                    <li>Implemented a synthesis module where a master AI analyzes and consolidates responses from individual AI models (OpenAI, Google, Anthropic), providing users with unified and reasoned answers.</li>
+                    <li>Engineered a Flask-based backend to orchestrate calls to multiple AI APIs.</li>
+                </ul>
                 <a href="https://veritable-army.onrender.com" target="_blank">View Project →</a>
             </div>
             <div class="project">
                 <h3>Reddit-To-Instagram Content Pipeline</h3>
-                <p class="tech">Python, Flask, Reddit API, Multiple LLMs</p>
-                <p>AI ensemble system leveraging OpenAI GPT-4o, Google Gemini-1.5-flash, and Claude-3-Haiku to generate robust responses to user prompts.</p>
+                <p class="tech">Python, Flask, Reddit API (PRAW), Instagram API (instagrapi)</p>
+                <ul>
+                    <li>Engineered a full-stack application to streamline content discovery and social media posting.</li>
+                    <li>Successfully grew an MMA-focused Instagram account to 500+ followers by automating discovery and posting of high-engagement content.</li>
+                </ul>
                 <a href="https://reddit-to-instagram-content-pipeline.onrender.com" target="_blank">View Project →</a>
             </div>
-            <div class="project">
-                <h3>Portfolio Website</h3>
-                <p class="tech">HTML, CSS, JavaScript</p>
-                <p>Personal portfolio website showcasing projects, skills, and contact information. Deployed on GitHub Pages.</p>
-                <a href="https://uci-tuan4.github.io" target="_blank">View Project →</a>
-            </div>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Software Engineering Intern</h3>
-                <p class="company">Company Name</p>
-                <p class="duration">Date - Date</p>
+        <section id="activities">
+            <h2>Extracurricular Activities</h2>
+            <div class="activity">
+                <h3>Ballroom Dance @ UCI</h3>
+                <p class="role">Treasurer</p>
+                <p class="duration">Sep. 2024 -- Present</p>
                 <ul>
-                    <li>Contributed to development of web applications</li>
-                    <li>Collaborated with team on code reviews and debugging</li>
-                    <li>Learned industry best practices</li>
+                    <li>Managed a club budget, coordinated fundraising initiatives, and handled financial reporting for a team of dancers.</li>
                 </ul>
             </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            <div class="school">
-                <h3>University of California, Irvine</h3>
-                <p>B.S. in Computer Science</p>
-                <p class="duration">Expected Graduation: 2026</p>
+            <div class="activity">
+                <h3>Cyber @ UCI</h3>
+                <p class="role">Member</p>
+                <p class="duration">Dec. 2023 -- Present</p>
+                <ul>
+                    <li>Engaged in hands-on workshops covering network security, ethical hacking, and digital forensics.</li>
+                </ul>
             </div>
         </section>
 

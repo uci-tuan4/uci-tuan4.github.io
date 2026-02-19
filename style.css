@@ -464,4 +464,75 @@ footer {
     background: var(--accent-color);
     transform: translateY(-2px);
     text-decoration: none;
+}
+
+/* Education */
+.school {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.school .degree {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.school .gpa {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.school .courses {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+/* Job/Experience */
+.job {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.job:hover {
+    border-left-color: var(--accent-color);
+}
+
+.job .company {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.job .duration {
+    color: var(--dark-grey);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem !important;
+}
+
+.job ul {
+    margin-left: 1.2em;
+}
+
+.job ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Activity */
+.activity {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.activity .role {
+    color: var(--secondary-color);
+    font-weight: bold;
 } 
