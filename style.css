@@ -442,7 +442,8 @@ section {
     margin-bottom: 0.5rem;
 }
 
-.courses {
+.courses,
+.activities-list {
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
@@ -472,6 +473,12 @@ section {
     border-radius: 50%;
     background: var(--accent);
     opacity: 0.5;
+}
+
+/* ── Education ────────────────────────────────── */
+
+.school + .school {
+    margin-top: 1.25rem;
 }
 
 /* ── Timeline (experience) ───────────────────── */
