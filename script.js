@@ -1,91 +1,111 @@
-// JavaScript for interactive elements will go here!
-
-console.log("Portfolio script loaded!");
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ── Scroll-triggered section animations ──────────────
     const sections = document.querySelectorAll('section');
-
-    const observerOptions = {
-        root: null, // relative to document viewport 
-        rootMargin: '0px',
-        threshold: 0.1 // visible amount of item shown in viewport
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.remove('section-hidden');
                 entry.target.classList.add('section-visible');
-                observer.unobserve(entry.target); // Stop observing once visible
+                sectionObserver.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.08 });
 
     sections.forEach(section => {
-        // Initially hide all sections that are not the hero section
-        if (section.id !== 'hero') { 
+        if (section.id !== 'hero') {
             section.classList.add('section-hidden');
         }
-        observer.observe(section);
+        sectionObserver.observe(section);
     });
 
-    // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('header nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    // ── Staggered card animations ────────────────────────
+    const cards = document.querySelectorAll('.card');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-visible');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach((card, i) => {
+        card.classList.add('animate-in');
+        card.style.transitionDelay = `${(i % 4) * 0.1}s`;
+        cardObserver.observe(card);
+    });
+
+    // ── Smooth scroll for nav links ──────────────────────
+    document.querySelectorAll('header nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelector('header nav ul')?.classList.remove('open');
             }
         });
     });
 
-    // Typing animation for hero subtitle
-    const subtitleText = "Computer Science Major @ UC Irvine";
-    const subtitleElement = document.getElementById('typing-subtitle');
-    let charIndex = 0;
+    // ── Active nav link on scroll ────────────────────────
+    const navLinks = document.querySelectorAll('header nav ul li a');
+    const navSections = document.querySelectorAll('section[id]');
 
-    function typeSubtitle() {
-        if (subtitleElement && charIndex < subtitleText.length) {
-            subtitleElement.textContent += subtitleText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeSubtitle, 100); // Adjust typing speed here (milliseconds)
+    function updateActiveNav() {
+        const scrollY = window.scrollY + 100;
+        navSections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+            const link = document.querySelector(`header nav ul li a[href="#${id}"]`);
+            if (link) {
+                if (scrollY >= top && scrollY < top + height) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // ── Mobile nav toggle ────────────────────────────────
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('header nav ul');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+    }
+
+    // ── Typing animation ─────────────────────────────────
+    const subtitleText = "Computer Science Major @ UC Irvine";
+    const el = document.getElementById('typing-subtitle');
+    let i = 0;
+
+    function type() {
+        if (el && i < subtitleText.length) {
+            el.textContent += subtitleText.charAt(i);
+            i++;
+            setTimeout(type, 80);
         }
     }
 
-    // Start typing animation after a short delay
-    setTimeout(typeSubtitle, 500);
+    setTimeout(type, 600);
 
-    // Rainbow cursor trail
-    const rainbowColors = [
-        '#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#8b00ff'
-    ];
-    let colorIndex = 0;
+    // ── Header background on scroll ──────────────────────
+    const header = document.querySelector('header');
+    function updateHeader() {
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 1px 8px rgba(0,0,0,0.06)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    }
 
-    document.addEventListener('mousemove', function(e) {
-        let trailDot = document.createElement('div');
-        trailDot.className = 'cursor-trail-dot';
-        document.body.appendChild(trailDot);
-
-        trailDot.style.left = (e.pageX - 5) + 'px'; // Adjust -5 to center the dot
-        trailDot.style.top = (e.pageY - 5) + 'px';
-        trailDot.style.backgroundColor = rainbowColors[colorIndex];
-
-        colorIndex = (colorIndex + 1) % rainbowColors.length;
-
-        setTimeout(() => {
-            trailDot.style.opacity = '0';
-            trailDot.style.transform = 'scale(0.5)';
-        }, 100); // Start fade out almost immediately
-
-        setTimeout(() => {
-            document.body.removeChild(trailDot);
-        }, 500); // Remove after animation (500ms matches CSS transition)
-    });
-
-}); 
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+});
