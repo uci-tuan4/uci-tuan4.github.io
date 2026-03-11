@@ -1,6 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ── Scroll-triggered section animations ──────────────
+    // ── Page load animation ──────────────────────────
+    requestAnimationFrame(() => {
+        document.body.classList.remove('loading');
+    });
+
+    // ── Dark mode toggle ─────────────────────────────
+    const themeToggle = document.querySelector('.theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    }
+
+    // ── Scroll-triggered section animations ──────────
     const sections = document.querySelectorAll('section');
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -19,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 
-    // ── Staggered card animations ────────────────────────
+    // ── Staggered card animations ────────────────────
     const cards = document.querySelectorAll('.card');
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -36,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardObserver.observe(card);
     });
 
-    // ── Smooth scroll for nav links ──────────────────────
+    // ── Smooth scroll for nav links ──────────────────
     document.querySelectorAll('header nav a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -48,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── Active nav link on scroll ────────────────────────
+    // ── Active nav link on scroll ────────────────────
     const navLinks = document.querySelectorAll('header nav ul li a');
     const navSections = document.querySelectorAll('section[id]');
 
@@ -72,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav();
 
-    // ── Mobile nav toggle ────────────────────────────────
+    // ── Mobile nav toggle ────────────────────────────
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('header nav ul');
     if (navToggle && navMenu) {
@@ -81,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Typing animation ─────────────────────────────────
+    // ── Typing animation ─────────────────────────────
     const subtitleText = "Computer Science Major @ UC Irvine";
     const el = document.getElementById('typing-subtitle');
     let i = 0;
@@ -96,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(type, 600);
 
-    // ── Header background on scroll ──────────────────────
+    // ── Header shadow on scroll ──────────────────────
     const header = document.querySelector('header');
     function updateHeader() {
         if (window.scrollY > 10) {
