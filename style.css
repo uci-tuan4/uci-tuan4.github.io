@@ -85,6 +85,16 @@ a:hover {
     color: var(--accent-light);
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 3px;
+}
+
+.mobile-resume {
+    display: none;
+}
+
 ul { list-style: none; }
 
 /* ── Header ─────────────────────────────────── */
@@ -478,10 +488,32 @@ section {
 }
 
 .company {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.45rem;
+    row-gap: 0.15rem;
     color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.95rem;
     margin-bottom: 0.25rem;
+}
+
+.company-team {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.company-location {
+    color: var(--text-tertiary);
+    font-weight: 400;
+}
+
+.company-team::before,
+.company-location::before {
+    content: '·';
+    color: var(--text-tertiary);
+    margin-right: 0.45rem;
 }
 
 .degree {
@@ -786,6 +818,7 @@ footer p {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    max-width: 100%;
     padding: 0.4rem 1rem;
     background: var(--accent-subtle);
     border: 1px solid var(--accent);
@@ -903,6 +936,8 @@ body.loading #hero .hero-image {
     .nav-right { gap: 0.5rem; }
     .nav-toggle { display: flex; }
 
+    .mobile-resume { display: block; }
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -968,8 +1003,23 @@ body.loading #hero .hero-image {
         left: -2rem;
     }
 
+    .company {
+        display: block;
+    }
+
+    .company span {
+        display: block;
+    }
+
+    .company-team::before,
+    .company-location::before {
+        content: none;
+    }
+
     .status-badge {
         justify-content: center;
+        padding: 0.4rem 0.75rem;
+        line-height: 1.4;
     }
 }
 
