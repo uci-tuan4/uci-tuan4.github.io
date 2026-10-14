@@ -1,0 +1,108 @@
+/* Amazon's navy navigation, warm orange accents, and clear content panels. */
+html[data-amazon] {
+    --accent: #b85e00;
+    --accent-light: #9b4d00;
+    --accent-subtle: #fff3df;
+    --text-primary: #0f1111;
+    --text-secondary: #37475a;
+    --text-tertiary: #565959;
+    --bg: #eaeded;
+    --bg-alt: #f7fafa;
+    --border: #d5d9d9;
+    --card-bg: #fff;
+    --header-bg: #131921;
+    --radius: 8px;
+    --radius-sm: 6px;
+    --shadow-md: 0 3px 10px #0f111114;
+    --shadow-lg: 0 6px 20px #0f11111a;
+    color-scheme: light;
+    scroll-padding-top: 92px;
+}
+html[data-amazon][data-theme="dark"] {
+    --accent: #ffb454;
+    --accent-light: #ffca80;
+    --accent-subtle: #3b3022;
+    --text-primary: #f2f4f5;
+    --text-secondary: #d2dae3;
+    --text-tertiary: #b4bfc9;
+    --bg: #17212b;
+    --bg-alt: #263545;
+    --border: #465564;
+    --card-bg: #202d3a;
+    color-scheme: dark;
+}
+body { font-family: Arial, Helvetica, sans-serif; }
+header { background: #131921; border-bottom: 4px solid #232f3e; backdrop-filter: none; }
+header nav { height: 76px; max-width: 1180px; }
+.nav-logo, .nav-logo:hover { color: #fff; }
+header nav ul { gap: 6px; }
+header nav ul li a { color: #fff; padding: 8px 10px; border: 1px solid transparent; border-radius: 2px; font-size: 14px; }
+header nav ul li a:hover, header nav ul li a.active { color: #fff; border-color: #fff; }
+header nav ul li a::after { display: none; }
+.theme-toggle { background: #232f3e; color: #fff; border-color: #526071; border-radius: 4px; }
+.theme-toggle:hover { color: #ff9900; background: #232f3e; border-color: #ff9900; }
+.nav-cta { background: #ff9900; color: #131921 !important; border-radius: 6px; }
+.nav-cta:hover { background: #f3a847; }
+main { max-width: 1180px; padding-top: 24px; }
+.amazon-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 20px; background: var(--card-bg); border: 1px solid var(--border); border-left: 4px solid #ff9900; color: var(--text-secondary); font-size: 13px; margin-bottom: 18px; }
+.amazon-banner strong { color: var(--text-primary); }
+#hero { padding: 44px 38px; min-height: 0; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 28px; }
+.hero-content { grid-template-columns: 1.2fr 1fr; gap: 40px; }
+.hero-greeting { color: var(--text-tertiary); font-size: 14px; }
+h1 { font-size: clamp(36px, 5vw, 60px); letter-spacing: -1.8px; }
+.hero-subtitle { color: var(--text-secondary) !important; font-size: 16px !important; }
+.hero-description { font-size: 15px; }
+.status-badge { background: var(--accent-subtle); border-color: #f0b760; color: var(--accent); border-radius: 4px; font-size: 12px; }
+.status-dot { background: #ff9900; animation: none; }
+.hero-image-wrapper { width: min(280px, 100%); height: auto; aspect-ratio: 1; }
+.hero-image-wrapper::before { inset: -9px; background: #ff9900; border-radius: 8px; opacity: 1; }
+.profile-picture { border-radius: 6px; border: 0; box-shadow: none; }
+.btn { padding: 10px 24px; font-size: 14px; border-radius: 20px; }
+.btn-primary { background: #ffd814; color: #0f1111; border: 1px solid #fcd200; box-shadow: 0 2px 5px #0f111126; }
+.btn-primary:hover { background: #f7ca00; color: #0f1111; box-shadow: 0 2px 5px #0f111126; transform: none; }
+.btn-outline { background: var(--card-bg); border: 1px solid var(--border); color: var(--text-primary); box-shadow: 0 2px 5px #0f111112; }
+.btn-outline:hover { background: var(--bg-alt); transform: none; }
+.hero-links a { background: var(--card-bg); border-radius: 6px; }
+section { padding: 0 0 30px; }
+.section-header { margin-bottom: 20px; }
+.section-label { font-size: 11px; letter-spacing: .12em; color: var(--text-tertiary); }
+.section-header h2 { font-size: 25px; }
+.section-header h2::after { width: 48px; background: #ff9900; }
+.about-content { max-width: none; background: var(--card-bg); border: 1px solid var(--border); padding: 24px 28px; border-radius: 8px; }
+.about-content p { font-size: 15px; line-height: 1.8; }
+.card:hover { transform: none; }
+.card-body { padding: 24px; }
+.card h3 { font-size: 18px; }
+.card-accent { background: #ff9900; }
+.card ul li, .project-description, .courses, .activities-list { font-size: 14px; }
+.card ul li::before { background: #ff9900; }
+.badge { border-radius: 4px; }
+.skill-tag { border-radius: 4px; background: var(--bg-alt); padding: 5px 9px; }
+.timeline-dot.active { background: #ff9900; border-color: #ff9900; box-shadow: 0 0 0 4px var(--accent-subtle); }
+.amazon-experience { border-top: 3px solid #ff9900; }
+.amazon-hint { background: var(--accent-subtle); color: var(--accent); border-color: #f0b760; }
+#contact { background: var(--card-bg); border: 1px solid var(--border); padding: 30px; border-radius: 8px; margin-bottom: 28px; }
+.contact-card { border-radius: 8px; background: var(--bg-alt); font-size: 14px; }
+.contact-card:hover { transform: none; }
+footer { margin-top: 0; background: #232f3e; border: 0; }
+footer p { color: #e3e8ef; }
+@media (max-width: 960px) {
+    header nav ul li a { font-size: 12px; padding: 8px 6px; }
+    header nav ul { gap: 2px; }
+    #hero { padding: 32px 25px; }
+    .hero-content { gap: 28px; }
+    .hero-actions { gap: 10px; flex-wrap: wrap; }
+}
+@media (max-width: 768px) {
+    header nav ul { top: 76px; background: #232f3e; }
+    header nav ul li a { font-size: 14px; }
+    .nav-toggle span { background: #fff; }
+    .amazon-banner { flex-wrap: wrap; padding: 12px 16px; }
+    #hero { padding: 30px 22px; }
+    .hero-content { grid-template-columns: 1fr; gap: 32px; }
+    .hero-image-wrapper { width: 190px; }
+    .hero-description { margin-bottom: 22px; }
+    .about-content { padding: 22px; }
+    section { padding-bottom: 28px; }
+    #contact { padding: 24px 18px; }
+}

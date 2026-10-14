@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Nguyen - Software Engineering Student</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="portfolio-styles" rel="stylesheet" href="style.css">
+    <link id="roblox-styles" rel="stylesheet" href="roblox.css" media="not all">
+    <link id="amazon-styles" rel="stylesheet" href="amazon.css" media="not all">
+    <link rel="stylesheet" href="theme-switch.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,8 +17,8 @@
 <body class="loading">
     <header>
         <nav>
-            <a href="#hero" class="nav-logo">TN</a>
-            <ul>
+            <a href="#hero" class="nav-logo" aria-label="Tu Nguyen home">TN</a>
+            <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -30,14 +33,17 @@
                 </button>
                 <a href="tu_resume_july31.pdf" download class="nav-cta">Resume</a>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
 
     <main>
+        <div class="amazon-banner amazon-only"><span><strong>Built with curiosity.</strong> Explore my work, experience, and ideas.</span><button class="amazon-exit" type="button">Back to original portfolio</button></div>
+        <div class="welcome-bar retro-only"><span>WELCOME TO MY LITTLE CORNER OF THE INTERNET</span><button class="retro-exit" type="button">Exit Roblox mode</button></div>
         <section id="hero">
+            <div class="window-bar retro-only"><span>My Profile</span><span aria-hidden="true">_ &nbsp; □ &nbsp; ×</span></div>
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="status-badge">
@@ -65,11 +71,23 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="hero-image-wrapper">
+                    <div class="retro-only">
+<div class="build-scene" role="img" aria-label="Classic blocky yellow avatar with a blue shirt and green legs on a studded green baseplate under a blue sky">
+                        <div class="scene-caption" aria-hidden="true">Tu's Baseplate</div>
+                        <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+                        <div class="scene-brick brick-red"></div><div class="scene-brick brick-blue"></div><div class="scene-brick brick-yellow"></div>
+                        <div class="baseplate"></div>
+                        <div class="block-avatar"><div class="avatar-head"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="smile"></i></div><div class="avatar-torso"><span>TN</span></div><div class="avatar-arm arm-left"></div><div class="avatar-arm arm-right"></div><div class="avatar-leg leg-left"></div><div class="avatar-leg leg-right"></div></div>
+                        <div class="scene-label" aria-hidden="true">uci-tuan4 <span>• Builder</span></div>
+                    </div>
+                        <div class="player-strip"><img src="me.jpeg" alt="Tu Nguyen" class="profile-picture"><div><strong>uci-tuan4</strong><span>Software engineer &amp; curious builder</span></div><span class="player-online">BUILDER</span></div>
+                    </div>
+                    <div class="hero-image-wrapper portfolio-only">
                         <img src="me.jpeg" alt="Tu Nguyen" class="profile-picture">
                     </div>
                 </div>
             </div>
+            <div class="profile-stats retro-only"><div><strong>UC Irvine</strong><span>My campus</span></div><div><strong>Full-stack + AI</strong><span>My toolkit</span></div><div><strong>Always building</strong><span>My current quest</span></div></div>
         </section>
 
         <section id="about">
@@ -127,11 +145,11 @@
                     <div class="timeline-marker">
                         <div class="timeline-dot active"></div>
                     </div>
-                    <div class="timeline-content card">
+                    <div class="timeline-content card amazon-experience">
                         <div class="card-body">
                             <span class="duration">Sep — Nov 2026</span>
                             <h3>Software Engineer Intern</h3>
-                            <p class="company"><span>Amazon</span><span class="company-team">Alexa Smart Home</span><span class="company-location">Seattle, WA</span></p>
+                            <p class="company"><button class="amazon-trigger" type="button" aria-pressed="false" aria-label="Switch portfolio to Amazon theme"><img class="company-logo company-logo-amazon logo-on-light" src="assets/logos/amazon-wordmark-dark.png" alt="Amazon" width="80" height="27"><img class="company-logo company-logo-amazon logo-on-dark" src="assets/logos/amazon-wordmark-white.svg" alt="Amazon" width="80" height="27"><span class="amazon-hint">Try Amazon mode <span aria-hidden="true">↗</span></span></button><span class="company-team">Alexa Smart Home</span><span class="company-location">Seattle, WA</span></p>
                             <ul>
                                 <li>Software Engineer Intern on the Alexa Smart Home team.</li>
                             </ul>
@@ -143,11 +161,11 @@
                     <div class="timeline-marker">
                         <div class="timeline-dot"></div>
                     </div>
-                    <div class="timeline-content card">
+                    <div class="timeline-content card roblox-experience">
                         <div class="card-body">
                             <span class="duration">Jun — Sep 2026</span>
                             <h3>Software Engineer Intern</h3>
-                            <p class="company"><span>Roblox</span><span class="company-team">Performance and Optimization</span><span class="company-location">San Mateo, CA</span></p>
+                            <p class="company"><button class="roblox-trigger" type="button" aria-pressed="false" aria-label="Switch portfolio to retro Roblox theme"><img class="company-logo company-logo-roblox logo-on-light" src="assets/logos/roblox-icon-black.svg" alt="" width="20" height="20"><img class="company-logo company-logo-roblox logo-on-dark" src="assets/logos/roblox-icon-white.svg" alt="" width="20" height="20">Roblox<span class="roblox-hint">Try retro mode <span aria-hidden="true">↗</span></span></button><span class="company-team">Performance and Optimization</span><span class="company-location">San Mateo, CA</span></p>
                             <ul>
                                 <li>Profiled C++ engine subsystems with internal tooling to identify CPU, memory, and frame-rate bottlenecks across high-concurrency environments.</li>
                                 <li>Designed synthetic workloads and contributed to regression suites that validated latency and stability for millions of concurrent users.</li>
@@ -450,6 +468,9 @@
         </div>
     </footer>
 
+    <button class="retro-exit retro-exit-floating retro-only" type="button">Exit Roblox mode</button>
+    <button class="amazon-exit amazon-exit-floating amazon-only" type="button">Exit Amazon mode</button>
+    <p id="theme-announcement" class="sr-only" role="status" aria-live="polite"></p>
     <script src="script.js"></script>
 </body>
 </html>
